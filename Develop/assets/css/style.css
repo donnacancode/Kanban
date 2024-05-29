@@ -12,7 +12,6 @@ body {
 
 .task-card {
   margin: 0 auto;
-  background-color: red;
 }
 
 .task-card:hover {

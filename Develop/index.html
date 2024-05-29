@@ -22,31 +22,29 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
-
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Task Board</title>
   </head>
-
   <body>
     <header class="p-4 mb-4 text-center border-bottom border-5">
       <h1 class="display-3"><b>Donna's Task Board</b></h1>
-      <p class="lead">A simple Kanban board for task management</p>
-      <h2><b>Time is Ticking!!</b></h2>
+      <p class="lead"><i>A simple Kanban board for task management</i></p>
+      <h2>Currently, it is<br /><span id="time-display"></span></h2>
     </header>
     <div class="container">
       <div class="text-center mb-5">
         <button
           class="btn btn-success"
           data-bs-toggle="modal"
-          data-bs-target="#formModal"
+          data-bs-target="#form-modal"
         >
           Add Task
         </button>
       </div>
-      <!-- Todo: Create a modal with a form to add tasks -->
+      <!-- Modal -->
       <div
         class="modal fade"
-        id="formModal"
+        id="form-modal"
         tabindex="-1"
         aria-labelledby="taskModalLabel"
         aria-hidden="true"
@@ -63,50 +61,57 @@
               ></button>
             </div>
             <div class="modal-body">
-              <form id="project-form">
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <input
-                      placeholder="Task Name"
-                      id="task-name-input"
-                      type="text"
-                      aria-label="Task Name"
-                    />
-                  </li>
-                  <li class="list-group-item">
-                    <input
-                      placeholder="Task Due Date"
-                      id="taskDueDate"
-                      autocomplete="off"
-                      type="text"
-                    />
-                  </li>
-                  <li class="list-group-item">
-                    <input
-                      placeholder="Description"
-                      id="description"
-                      type="text"
-                      rows="4"
-                      cols="40"
-                  ></input><br /><br>
-                </ul>
-                <input type="submit" value="Enter Task!" />
+              <form id="task-form">
+                <div class="mb-3">
+                  <label for="task-name-input" class="form-label"
+                    >Task Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="task-name-input"
+                    placeholder="Task Name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="task-due-date" class="form-label"
+                    >Task Due Date</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="task-due-date"
+                    placeholder="Task Due Date"
+                    autocomplete="off"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="task-description" class="form-label"
+                    >Description</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="task-description"
+                    placeholder="Description"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Enter Task!
+                </button>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div id="cardContainer"></div>
+      <div id="cardContainer"></div>
       <div class="row swim-lanes text-center justify-content-between">
         <div class="col-12 col-lg-4 d-flex">
           <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
             <div class="card-header bg-light">
               <h2 class="card-title mb-1">To Do</h2>
             </div>
-            <div class="card-body bg-light">
-              <div id="todo-cards"></div>
-            </div>
+            <div class="card-body bg-light" id="todo-cards"></div>
           </div>
         </div>
         <div class="col-12 col-lg-4 d-flex">
@@ -114,9 +119,7 @@
             <div class="card-header bg-white">
               <h2 class="card-title mb-1">In Progress</h2>
             </div>
-            <div class="card-body bg-light">
-              <div id="in-progress-cards"></div>
-            </div>
+            <div class="card-body bg-light" id="in-progress-cards"></div>
           </div>
         </div>
         <div class="col-12 col-lg-4 d-flex">
@@ -124,9 +127,7 @@
             <div class="card-header bg-white">
               <h2 class="card-title mb-1">Done</h2>
             </div>
-            <div class="card-body bg-light">
-              <div id="done-cards"></div>
-            </div>
+            <div class="card-body bg-light" id="done-cards"></div>
           </div>
         </div>
       </div>
