@@ -1,4 +1,4 @@
-# <Donna's Task Board: A Simple Kanban Board for Task Management>
+# Donna's Task Board: A Simple Kanban Board for Task Management
 
 ## Description
 
