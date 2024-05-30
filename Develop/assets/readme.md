@@ -10,14 +10,6 @@ Time and task management during Bootcamp is paramount; using a simple kanban boa
 
 To get started, simply click on the green "Add Task" button and enter your task information. As your task status changes, you can manually move it from column to column. The tasks will automatically change color (yellow if they are due today, red if they are overdue). If you need to delete a task, you can just click the delete button and pretend like it was never something you had to do :)
 
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
 ## License
 
 This project is licensed under the MIT license- please see the license for details.
